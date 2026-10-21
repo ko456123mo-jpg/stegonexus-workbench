@@ -1,5 +1,20 @@
 # StegoNexus
 
+<p align="center">
+  <a href="../../actions/workflows/tests.yml"><img src="../../actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+  <img src="https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white" alt="Python 3.11+"/>
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="MIT License"/>
+  <img src="https://img.shields.io/badge/Platform-Kali%20%2F%20Debian-557C94?logo=kalilinux&logoColor=white" alt="Kali"/>
+  <img src="https://img.shields.io/badge/GUI-PySide6-41CD52?logo=qt&logoColor=white" alt="PySide6"/>
+  <img src="https://img.shields.io/badge/Domain-Digital%20Forensics-8B5CF6" alt="Forensics"/>
+</p>
+
+> **Note on repository lineage.** This repository (`Se2`) is the **service-layer
+> refactor** of the StegoNexus workbench — 17 modules under `app/modules/` and
+> 22 GUI views. The earlier, single-package implementation lives in
+> [`ko456123mo-jpg/StegoNexus`](https://github.com/ko456123mo-jpg/StegoNexus).
+> See [Repository relationship](#repository-relationship) at the bottom.
+
 A defensive digital-forensics and steganography workbench for **authorized
 laboratory and teaching use**. StegoNexus analyses, hides, extracts and documents
 covert data across text, image, audio, video and network carriers — with a real
@@ -143,6 +158,30 @@ is produced at runtime and is not committed; regenerate samples with
 
 ---
 
+## Author
+
+**Mohammed Moneer** — مهندس أمن سيبراني
+
+- 🐙 [@ko456123mo-jpg](https://github.com/ko456123mo-jpg)
+- 📧 [moh123mon456@gmail.com](mailto:moh123mon456@gmail.com)
+
+**متاح للعمل الحر:** تحليل جنائي رقمي · كشف البيانات المخفية · بناء أدوات أمنية مخصّصة.
+
 ## License
 
-See [LICENSE](LICENSE).
+MIT — see [`LICENSE`](LICENSE). Commercial use permitted.
+
+## Security & usage
+
+- [`SECURITY.md`](SECURITY.md) — private disclosure channel and by-design behaviour.
+- [`USAGE_POLICY.md`](USAGE_POLICY.md) — allowed/prohibited use and client authorization.
+
+## Repository relationship
+
+| Repository | Role | Structure |
+|---|---|---|
+| **StegoNexus** (this one · `Se2`) | Current refactor | 17 modules in `app/modules/` · 22 GUI views · 8 test files |
+| [`StegoNexus` (original)](https://github.com/ko456123mo-jpg/StegoNexus) | Earlier single-package build | 13 core modules in `stegonexus/core/` · screenshots + academic docs |
+
+Both implement the same defensive workbench. New work lands here; the original
+repository remains as the documented, screenshot-rich reference build.
