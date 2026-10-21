@@ -61,10 +61,24 @@ def run_diagnostics() -> int:
     from app.services.tool_health import health
 
     rows = health.summary()["rows"]
+    if not rows:
+        print("no tracked tools")
+        return 0
     width = max(len(row["name"]) for row in rows)
     print(f"{APP_NAME} {APP_VERSION} - tool health ({len(rows)} tracked)")
     print("-" * 72)
+
+    def _label(row: dict) -> str:
+        # ``as_dict`` exposes ``available``/``classification`` — the older
+        # ``status`` key it once carried no longer exists, which made this
+        # documented flag crash with KeyError before printing a single row.
+        if row.get("available"):
+            return "AVAILABLE"
+        if row.get("classification") == "REFERENCE":
+            return "REFERENCE"
+        return "MISSING"
+
     for row in rows:
-        print(f"{row['name'].ljust(width)}  {row['status']:<12} "
-              f"{row['classification']:<12} {row['version'] or row['path'] or ''}")
+        print(f"{row['name'].ljust(width)}  {_label(row):<12} "
+              f"{row['classification']:<12} {row.get('version') or row.get('path') or ''}")
     return 0
