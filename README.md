@@ -1,5 +1,7 @@
 # StegoNexus
 
+<p align="center"><img src="docs/screenshots/logo_primary.png" width="420" alt="StegoNexus"></p>
+
 <p align="center">
   <a href="../../actions/workflows/tests.yml"><img src="../../actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
   <img src="https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white" alt="Python 3.11+"/>
@@ -16,7 +18,39 @@
 > See [Repository relationship](#repository-relationship) at the bottom.
 
 A defensive digital-forensics and steganography workbench for **authorized
-laboratory and teaching use**. StegoNexus analyses, hides, extracts and documents
+laboratory and teaching use**.
+
+<p align="center">
+  <img src="docs/screenshots/GUISheet_dashboard.png" alt="Dashboard" width="49%"/>
+  <img src="docs/screenshots/02_forensics_run.png" alt="Forensics analysis" width="49%"/>
+</p>
+<p align="center"><sub><b>يميناً:</b> لوحة التحكم الموحّدة · <b>يساراً:</b> تحليل جنائي فعلي لملف</sub></p>
+
+<p align="center">
+  <img src="docs/screenshots/05_image_hiding.png" alt="Image hiding" width="32%"/>
+  <img src="docs/screenshots/06_audio_hiding.png" alt="Audio hiding" width="32%"/>
+  <img src="docs/screenshots/11_case_management.png" alt="Case management" width="32%"/>
+</p>
+<p align="center"><sub>إخفاء في الصور · تحليل صوتي · إدارة قضية وتقارير</sub></p>
+
+> 📸 **29 لقطة شاشة حقيقية** من الأداة تعمل — في [`docs/screenshots/`](docs/screenshots/).
+> كل صورة أُخذت من تشغيل فعلي، لا من تصميم واجهة.
+
+<details>
+<summary><b>عرض الواجهات الأخرى</b> (7 وحدات + الطرفية)</summary>
+
+| الوحدة | لقطة |
+|---|---|
+| التحليل الجنائي | [`02_forensics.png`](docs/screenshots/02_forensics.png) |
+| البصمات والتحقق | [`03_hashing.png`](docs/screenshots/03_hashing.png) |
+| إخفاء في النص | [`04_text_hiding.png`](docs/screenshots/04_text_hiding.png) |
+| الميتاداتا | [`05b_image_metadata.png`](docs/screenshots/05b_image_metadata.png) |
+| الفيديو | [`07_video_hiding.png`](docs/screenshots/07_video_hiding.png) |
+| القنوات الشبكية | [`08_network_hiding.png`](docs/screenshots/08_network_hiding.png) |
+| مختبر البرمجيات الخبيثة | [`09_malware_lab.png`](docs/screenshots/09_malware_lab.png) |
+| واجهة الطرفية | [`CLISheet_terminal.png`](docs/screenshots/CLISheet_terminal.png) |
+
+</details> StegoNexus analyses, hides, extracts and documents
 covert data across text, image, audio, video and network carriers — with a real
 case/evidence workflow, hashing, metadata handling, forensic triage, malware
 **static** analysis and report generation.
@@ -178,10 +212,15 @@ MIT — see [`LICENSE`](LICENSE). Commercial use permitted.
 
 ## Repository relationship
 
-| Repository | Role | Structure |
-|---|---|---|
-| **StegoNexus** (this one · `Se2`) | Current refactor | 17 modules in `app/modules/` · 22 GUI views · 8 test files |
-| [`StegoNexus` (original)](https://github.com/ko456123mo-jpg/StegoNexus) | Earlier single-package build | 13 core modules in `stegonexus/core/` · screenshots + academic docs |
+This repository **is** the StegoNexus workbench — the actively developed build.
+It was previously named `Se2`; the earlier single-package implementation lives on
+in [`ko456123mo-jpg/StegoNexus`](https://github.com/ko456123mo-jpg/StegoNexus)
+as an archived reference build.
 
-Both implement the same defensive workbench. New work lands here; the original
-repository remains as the documented, screenshot-rich reference build.
+| | Current (this repo) | Archived reference |
+|---|---|---|
+| Structure | 17 modules in `app/modules/` | 13 modules in `stegonexus/core/` |
+| GUI | 22 views | 1 dashboard |
+| Tests | 8 files (pytest) | 3 files |
+| Status | ✅ active development | 📦 archived — read-only |
+| Academic deliverables | `docs/audit/` | `docs/academic/` |
